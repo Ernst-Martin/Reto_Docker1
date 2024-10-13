@@ -21,8 +21,8 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build . -t ${{ secrets.DOCKER_USERNAME }}/mi-imagen:${{ github.ref }} 
+        docker build . -t ${{ secrets.DOCKER_USERNAME }}/mi-imagen:${{ github.ref_name }} 
 
     - name: Push Docker image
       run: |
-        docker push ${{ secrets.DOCKER_USERNAME }}/mi-imagen:${{ github.ref }}
+        docker push ${{ secrets.DOCKER_USERNAME }}/mi-imagen:${{ github.ref_name }}
